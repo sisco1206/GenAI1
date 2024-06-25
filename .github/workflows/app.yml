@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo I am very exciting to learn scripting!
+        shell: bash
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a multi-line script
+        run: 
+          echo "Deploy a new script"
+          echo "test the new script to be deployed"
+        shell: bash  
